@@ -60,8 +60,8 @@ const AdminSidebar = () => {
                             SA
                         </span>
                     </div>
-                    <div className="px-2 XXXpy-6 border-t border-gray-100">
-                        <ul className="XXXmt-14 space-y-1 grid gap-1">
+                    <div className="px-2 border-t border-gray-100">
+                        <ul className="space-y-1 grid gap-1">
                             <NavLink name="Dashboard" icon={IoHome}  />
                             <NavLink name="Products" icon={FaBoxArchive}  />
                             <NavLink name="Categories" icon={FaTags}  />
