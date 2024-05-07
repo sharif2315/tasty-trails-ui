@@ -1,11 +1,11 @@
-// import { HiOutlineArchiveBoxArrowDown } from "react-icons/hi2";
 import { IconType } from "react-icons";
-import { FaBox, FaTags, FaBell } from "react-icons/fa";
+import { FaTags, FaBell } from "react-icons/fa";
 import { FaInbox } from "react-icons/fa";
-import { IoCalendarNumber } from "react-icons/io5";
+import { IoCalendarNumber, IoHome } from "react-icons/io5";
 import { MdAccountCircle } from "react-icons/md";
 import { AiOutlineBarChart, AiOutlineLogout, AiOutlineSetting } from "react-icons/ai";
 import SideBarColumn from "./SideBarColumn";
+import { FaBoxArchive } from "react-icons/fa6";
 
 const AdminSidebar = () => {
 
@@ -50,17 +50,20 @@ const AdminSidebar = () => {
 
                 {/* User Name Icon and NavLinks List */}
                 <div>
-                    <div className="inline-flex size-16 items-center justify-center">
+                    <div 
+                        className="flex items-center justify-center py-4"
+                        // className="inline-flex size-16 items-center justify-center"
+                    >
                         <span
                             className="grid size-10 place-content-center rounded-lg bg-gray-100 text-xs text-gray-600"
                         >
-                            L
+                            SA
                         </span>
                     </div>
                     <div className="px-2 XXXpy-6 border-t border-gray-100">
                         <ul className="XXXmt-14 space-y-1 grid gap-1">
-
-                            <NavLink name="Products" icon={FaBox}  />
+                            <NavLink name="Dashboard" icon={IoHome}  />
+                            <NavLink name="Products" icon={FaBoxArchive}  />
                             <NavLink name="Categories" icon={FaTags}  />
                             <NavLink name="Orders" icon={FaInbox}  />
                             <NavLink name="Calendar" icon={IoCalendarNumber}  />
@@ -68,8 +71,6 @@ const AdminSidebar = () => {
                             <NavLink name="Analytics" icon={AiOutlineBarChart}  />
                             <NavLink name="Profile" icon={MdAccountCircle}  />
                             <NavLink name="Settings" icon={AiOutlineSetting}  />
-                            {/* <NavLink name="Logout" icon={AiOutlineLogout}  /> */}
-
                         </ul>
                     </div>
                 </div>
@@ -79,15 +80,13 @@ const AdminSidebar = () => {
                     // className="sticky inset-x-0 bottom-0 border-t border-gray-100 bg-white p-2"
                     className="flex justify-center items-center mb-2"
                 >
-                    <NavLink name="Logout" icon={AiOutlineLogout}  />
+                    <ul>
+                        <NavLink name="Logout" icon={AiOutlineLogout}  />
+                    </ul>
                 </div>
 
-
-
             </div>
-
         </div>
-
     )
 }
 
