@@ -78,9 +78,9 @@ const AdminSidebar = () => {
                 {/* Logout Button */}
                 <div 
                     // className="sticky inset-x-0 bottom-0 border-t border-gray-100 bg-white p-2"
-                    className="flex justify-center items-center mb-2"
+                    className="flex justify-center items-center mb-2 px-2"
                 >
-                    <ul>
+                    <ul className="w-full">
                         <NavLink name="Logout" icon={AiOutlineLogout}  />
                     </ul>
                 </div>
