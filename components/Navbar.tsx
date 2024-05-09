@@ -6,7 +6,6 @@ const Navbar = () => {
             
             <div>Dashboard</div>
 
-            {/* <div>Search</div> */}            
             <SearchInput/>
 
             <div>Profile</div>
