@@ -1,6 +1,7 @@
 import AdminSidebar from "@/components/AdminSidebar"
 import AdminTable from "@/components/AdminTable"
 import Navbar from "@/components/Navbar"
+import NavbarTW from "@/components/Navbar_tw"
 
 const Admin = () => {
     return (
@@ -12,6 +13,7 @@ const Admin = () => {
 
             <div className="col-span-10 col-start-3">
                 <Navbar />
+                <NavbarTW />
                 {/* <AdminTable/> */}
             </div>
 
