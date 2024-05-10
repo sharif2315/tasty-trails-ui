@@ -2,12 +2,28 @@
 import SearchInput from "./SearchInput"
 import { Fragment } from 'react'
 import { Menu, MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/react'
+import { MdAccountCircle } from "react-icons/md";
 
+
+interface NavItemProps {
+    name: string;
+    href?: string;
+}
+
+const NavItem: React.FC<NavItemProps> = ({ name, href='#' }) => {
+    return (
+        <MenuItem>
+            <a
+                href={href}
+                className='hover:bg-gray-100 block px-4 py-2 text-sm text-gray-700'
+            >
+                {name}
+            </a>
+        </MenuItem>
+    )
+}
 
 const Navbar = () => {
-    function classNames(...classes: any) {
-        return classes.filter(Boolean).join(' ')
-      }
     return (
         <div className="flex gap-4 px-4 py-2 justify-between items-center">
 
@@ -15,17 +31,13 @@ const Navbar = () => {
 
             <SearchInput />
 
-            {/* <div>Profile</div> */}
             <Menu as="div" className="relative ml-3">
                 <div>
                     <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                         <span className="absolute -inset-1.5" />
                         <span className="sr-only">Open user menu</span>
-                        <img
-                            className="h-8 w-8 rounded-full"
-                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                            alt=""
-                        />
+                        <MdAccountCircle className="bg-white rounded-full border-none focus:ring-0" size={35} />
+                        
                     </MenuButton>
                 </div>
                 <Transition
@@ -38,39 +50,13 @@ const Navbar = () => {
                     leaveTo="transform opacity-0 scale-95"
                 >
                     <MenuItems className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                        <MenuItem>
-                            {({ active }) => (
-                                <a
-                                    href="#"
-                                    className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                                >
-                                    Your Profile
-                                </a>
-                            )}
-                        </MenuItem>
-                        <MenuItem>
-                            {({ active }) => (
-                                <a
-                                    href="#"
-                                    className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                                >
-                                    Settings
-                                </a>
-                            )}
-                        </MenuItem>
-                        <MenuItem>
-                            {({ active }) => (
-                                <a
-                                    href="#"
-                                    className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                                >
-                                    Sign out
-                                </a>
-                            )}
-                        </MenuItem>
+                        <NavItem name="Your Profile" />
+                        <NavItem name="Settings" />
+                        <NavItem name=" Sign out" />
                     </MenuItems>
                 </Transition>
             </Menu>
+
         </div>
     )
 }
