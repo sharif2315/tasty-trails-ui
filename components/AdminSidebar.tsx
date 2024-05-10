@@ -38,7 +38,7 @@ const NavLink: React.FC<NavLinkProps> = ({ name, href='#', icon: Icon }) => {
 const AdminSidebar = () => {
     return (
         <div className="flex">
-            <div className="flex h-screen flex-1 flex-col justify-between border-e max-w-48 bg-white">
+            <div className="flex h-screen flex-1 flex-col justify-between border-e bg-white">
 
                 <div>
 
@@ -61,7 +61,7 @@ const AdminSidebar = () => {
                     </div>
 
                     {/* Nav links */}
-                    <div className="px-2 pt-2 grid place-content-center">
+                    <div className="px-3 pt-2 grid place-content-center">
                         <ul className="space-y-1 grid gap-1">
                             <NavLink name="Dashboard" icon={IoHome}  />
                             <NavLink name="Products" icon={FaBoxArchive}  />
