@@ -33,6 +33,7 @@ export default function NavbarTW() {
                   )}
                 </Disclosure.Button>
               </div>
+
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <img
@@ -59,6 +60,7 @@ export default function NavbarTW() {
                   </div>
                 </div>
               </div>
+
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button
                   type="button"
@@ -126,6 +128,7 @@ export default function NavbarTW() {
                   </Transition>
                 </Menu>
               </div>
+              
             </div>
           </div>
 
@@ -137,7 +140,7 @@ export default function NavbarTW() {
                   as="a"
                   href={item.href}
                   className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                    item.current ? 'bg-gray-900 text-white' : 'text-yellow-300 hover:bg-gray-700 hover:text-white',
                     'block rounded-md px-3 py-2 text-base font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}
@@ -147,6 +150,7 @@ export default function NavbarTW() {
               ))}
             </div>
           </Disclosure.Panel>
+
         </>
       )}
     </Disclosure>

@@ -13,7 +13,7 @@ const Admin = () => {
 
             <div className="col-span-10 col-start-3">
                 <Navbar />
-                <NavbarTW />
+                {/* <NavbarTW /> */}
                 {/* <AdminTable/> */}
             </div>
 
