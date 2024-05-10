@@ -5,7 +5,7 @@ import NavbarTW from "@/components/Navbar_tw"
 
 const Admin = () => {
     return (
-        <div className="grid grid-cols-12 bg-slate-100">
+        <div className="grid grid-cols-12 bg-slate-100/65">
 
             <div className="col-span-2">
                 <AdminSidebar />
