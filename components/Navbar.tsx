@@ -27,7 +27,7 @@ const Navbar = () => {
     return (
         <div className="sticky flex gap-4 py-2 justify-between items-center">
 
-            <div className="text-xl">Hello, Sharif</div>
+            <div className="text-xl hidden md:block">Hello, Sharif</div>
 
             <SearchInput />
 
