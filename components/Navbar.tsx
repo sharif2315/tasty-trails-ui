@@ -25,7 +25,7 @@ const NavItem: React.FC<NavItemProps> = ({ name, href='#' }) => {
 
 const Navbar = () => {
     return (
-        <div className="flex gap-4 px-4 py-2 justify-between items-center">
+        <div className="sticky flex gap-4 px-4 py-2 justify-between items-center">
 
             <div className="text-xl">Hello, Sharif</div>
 
@@ -33,11 +33,13 @@ const Navbar = () => {
 
             <Menu as="div" className="relative ml-3">
                 <div>
-                    <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                    <MenuButton className="relative flex rounded-full text-sm">
                         <span className="absolute -inset-1.5" />
                         <span className="sr-only">Open user menu</span>
-                        <MdAccountCircle className="bg-white rounded-full border-none focus:ring-0" size={35} />
-                        
+                        <MdAccountCircle 
+                            className="bg-white text-gray-500 rounded-full" 
+                            size={40} 
+                        />                        
                     </MenuButton>
                 </div>
                 <Transition

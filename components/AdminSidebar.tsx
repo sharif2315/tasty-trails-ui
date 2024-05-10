@@ -38,23 +38,30 @@ const NavLink: React.FC<NavLinkProps> = ({ name, href='#', icon: Icon }) => {
 const AdminSidebar = () => {
     return (
         <div className="flex">
-            <div className="flex h-screen flex-1 flex-col justify-between border-e bg-white">
+            <div className="flex h-screen flex-1 flex-col justify-between border-e max-w-48 bg-white">
 
                 <div>
 
-
+                    {/* SA Rounded Icon */}
                     <div 
                         className="flex items-center justify-center py-4"
                         // className="inline-flex size-16 items-center justify-center"
                     >
                         <span
-                            className="grid size-10 place-content-center rounded-lg bg-gray-100 text-xs text-gray-600"
+                            className="sm:hidden grid size-10 place-content-center rounded-lg bg-slate-800 shadow-lg text-xs text-white font-semibold"
                         >
-                            SA
+                            TT
+                        </span>
+
+                        <span
+                            className="hidden px-4 py-2 sm:grid place-content-center rounded-lg bg-slate-800 shadow-lg text-md text-white font-semibold"
+                        >
+                            Tasty Trails
                         </span>
                     </div>
 
-                    <div className="px-2 border-t border-gray-100">
+                    {/* Nav links */}
+                    <div className="px-2 pt-2 grid place-content-center">
                         <ul className="space-y-1 grid gap-1">
                             <NavLink name="Dashboard" icon={IoHome}  />
                             <NavLink name="Products" icon={FaBoxArchive}  />
@@ -72,7 +79,7 @@ const AdminSidebar = () => {
                 {/* Logout Button */}
                 <div 
                     // className="sticky inset-x-0 bottom-0 border-t border-gray-100 bg-white p-2"
-                    className="flex justify-center items-center mb-2 px-2"
+                    className="flex justify-center items-center mb-2 p-2"
                 >
                     <ul className="w-full">
                         <NavLink name="Logout" icon={AiOutlineLogout}  />
