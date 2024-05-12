@@ -8,7 +8,7 @@ interface StatCardProps {
 }
 const StatCard: React.FC<StatCardProps> = ({ name, value }) => {
   return (
-    <div className="flex flex-col justify-center bg-white border-gray-200 border-2 shadow-sm rounded-2xl py-6 px-4 max-w-60">
+    <div className="flex flex-col justify-center bg-white border-gray-200 border-2 shadow-sm rounded-2xl py-6 px-4">
       <h1 className="text-2xl font-bold text-slate-500">{value}</h1>
       <p className="text-md font-semiboldtext-slate-600">{name}</p>
     </div>
@@ -17,7 +17,7 @@ const StatCard: React.FC<StatCardProps> = ({ name, value }) => {
 
 const StatsSection = () => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8 max-w-[55rem]">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8">
       <StatCard name="Sales" value="£120" />
       <StatCard name="Orders" value="25" />
       <StatCard name="Customers" value="63" />
