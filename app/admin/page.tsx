@@ -9,7 +9,7 @@ const Admin = () => {
 
             <AdminSidebar />
 
-            <div className="px-4 w-full">
+            <div className="px-8 w-full">
                 <div className="grid">
                     <Navbar />
                     <StatsSection />

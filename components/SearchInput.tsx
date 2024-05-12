@@ -3,7 +3,7 @@ import { IoSearchOutline } from "react-icons/io5";
 
 const SearchInput = () => {
     return (
-        <div className="relative">
+        <div className="relative w-full max-w-xl">
             <label htmlFor="Search" className="sr-only"> Search </label>
 
             <input
