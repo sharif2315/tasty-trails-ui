@@ -13,7 +13,7 @@ const Admin = () => {
                 <div className="grid">
                     <Navbar />
                     <StatsSection />
-                    {/* <AdminTable/> */}
+                    <AdminTable/>
                 </div>
 
             </div>
