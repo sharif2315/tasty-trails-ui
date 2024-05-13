@@ -37,7 +37,7 @@ const NavLink: React.FC<NavLinkProps> = ({ name, href='#', icon: Icon }) => {
 
 const AdminSidebar = () => {
     return (
-        <div className="flex">
+        <div className="fixed flex">
             <div className="flex h-screen flex-1 flex-col justify-between border-e bg-white">
 
                 <div>

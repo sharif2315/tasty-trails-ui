@@ -15,7 +15,7 @@ interface TableRowProps {
 
 const TableRow: React.FC<TableRowProps> = ({ orderRef, deliveryOption, deliveryDate, status, invoice }) => {
     return (
-        <tr className='hover:bg-slate-100 text-gray-700'>
+        <tr className='hover:bg-slate-100/65 text-gray-700'>
             <td className="whitespace-nowrap px-4 py-2">{orderRef}</td>
             <td className="whitespace-nowrap px-4 py-2">{deliveryOption}</td>
             <td className="whitespace-nowrap px-4 py-2">{deliveryDate}</td>
@@ -53,6 +53,17 @@ const AdminTable = () => {
                     <TableRow orderRef='#A2SHE2' deliveryOption='DELIVERY' deliveryDate='13/05/2024' status='PROCESSING' invoice={27.99}  />
                     <TableRow orderRef='#A2SHE2' deliveryOption='DELIVERY' deliveryDate='13/05/2024' status='PROCESSING' invoice={35.99}  />
                     <TableRow orderRef='#A2SHE2' deliveryOption='PICKUP' deliveryDate='13/05/2024' status='PROCESSING' invoice={75.99}  />
+
+                    {[...Array(10)].map((_, index) => (
+                        <TableRow 
+                            key={index} 
+                            orderRef={`#A2SHE${index + 1}`} 
+                            deliveryOption='PICKUP' 
+                            deliveryDate='13/05/2024' 
+                            status='PROCESSING' 
+                            invoice={15.99}  
+                        />
+                    ))}
                     
                 </tbody>
             </table>
