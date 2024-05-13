@@ -1,20 +1,26 @@
 import React from 'react'
 
+// Recent Orders
+// name, category, price
+// orderRef, total items, delivery option, delivery date, Status, Invoice
 
 interface TableRowProps {
-    name: string;
-    dob: string;
-    role: string;
-    salary: string;
+    orderRef: string;
+    // totalItems: number;
+    deliveryOption: string;
+    deliveryDate: string;
+    status: string,
+    invoice: number
 }
 
-const TableRow: React.FC<TableRowProps> = ({ name, dob, role, salary }) => {
+const TableRow: React.FC<TableRowProps> = ({ orderRef, deliveryOption, deliveryDate, status, invoice }) => {
     return (
-        <tr>
-            <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">{name}</td>
-            <td className="whitespace-nowrap px-4 py-2 text-gray-700">{dob}</td>
-            <td className="whitespace-nowrap px-4 py-2 text-gray-700">{role}</td>
-            <td className="whitespace-nowrap px-4 py-2 text-gray-700">{salary}</td>
+        <tr className='hover:bg-slate-100 text-gray-700'>
+            <td className="whitespace-nowrap px-4 py-2">{orderRef}</td>
+            <td className="whitespace-nowrap px-4 py-2">{deliveryOption}</td>
+            <td className="whitespace-nowrap px-4 py-2">{deliveryDate}</td>
+            <td className="whitespace-nowrap px-4 py-2">{invoice}</td>
+            <td className="whitespace-nowrap px-4 py-2">{status}</td>
             <td className="whitespace-nowrap px-4 py-2">
                 <a
                     href="#"
@@ -27,26 +33,26 @@ const TableRow: React.FC<TableRowProps> = ({ name, dob, role, salary }) => {
     )
 }
 
-
 const AdminTable = () => {
     return (
         <div className="overflow-x-auto rounded-xl border-slate-200 border-2">
             <table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
                 <thead className="">
                     <tr>
-                        <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Name</th>
-                        <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Date of Birth</th>
-                        <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Role</th>
-                        <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Salary</th>
+                        <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Order ID</th>
+                        <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Delivery Option</th>
+                        <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Delivery Date</th>
+                        <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Invoice</th>
+                        <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Status</th>
                         <th className="px-4 py-2"></th>
                     </tr>
                 </thead>
 
-                <tbody className="divide-y divide-gray-200">
-                    <TableRow name='Fahima Akhter' dob='06/04/1993' role='Architect' salary='30,000'  />
-                    <TableRow name='Fahima Akhter' dob='06/04/1993' role='Architect' salary='30,000'  />
-                    <TableRow name='Fahima Akhter' dob='06/04/1993' role='Architect' salary='30,000'  />
-                    <TableRow name='Fahima Akhter' dob='06/04/1993' role='Architect' salary='30,000'  />
+                <tbody className="divide-y divide-gray-200 text-center">
+                    <TableRow orderRef='#A2SHE2' deliveryOption='PICKUP' deliveryDate='13/05/2024' status='PROCESSING' invoice={15.99}  />
+                    <TableRow orderRef='#A2SHE2' deliveryOption='DELIVERY' deliveryDate='13/05/2024' status='PROCESSING' invoice={27.99}  />
+                    <TableRow orderRef='#A2SHE2' deliveryOption='DELIVERY' deliveryDate='13/05/2024' status='PROCESSING' invoice={35.99}  />
+                    <TableRow orderRef='#A2SHE2' deliveryOption='PICKUP' deliveryDate='13/05/2024' status='PROCESSING' invoice={75.99}  />
                     
                 </tbody>
             </table>
