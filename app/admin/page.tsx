@@ -6,7 +6,7 @@ import OrdersCard from "@/components/OrdersCard"
 
 const Admin = () => {
     return (
-        <div className="flex bg-slate-100/65">
+        <div className="flex bg-slate-100/65 h-screen">
 
             <AdminSidebar />
 
