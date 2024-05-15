@@ -7,26 +7,61 @@ import React from "react";
 // fields: imgUrl, name, quantitySold, totalSales
 
 interface CardItemProps {
-    title: string;
-    figure: string;
+    deliveryDate: string; // includes pickup order as well, rename??
+    deliveryOption: string // use DeliveryOption type/enum
+    address?: string; // address to drop off order
+    invoice: number;
 }
-const CardItem: React.FC<CardItemProps> = ({ title, figure }) => {
+const CardItem: React.FC<CardItemProps> = ({ deliveryOption,deliveryDate, address, invoice }) => {
     return (
-        <div className="flex flex-col items-center justify-center gap-2">
-            <h1 className="text-4xl font-bold">{ figure }</h1>
-            <p className="text-lg font-semibold text-slate-500">{ title }</p>
+        <div className="border-2 border-slate-300 rounded-xl p-4 shadow-sm hover:cursor-pointer hover:bg-slate-100/65">
+            <h1 className="text-sm font-semibold">{ deliveryDate }</h1>
+            <p className="text-sm text-slate-500">{ address }</p>
+            <p className="text-sm text-slate-500">{ deliveryOption }</p>
+            <p className="text-sm text-slate-500">£{ invoice }</p>
         </div>
     )
 }
 
 const OrdersCard = () => {
     return (
-        <div className="grid gap-10 rounded-xl border-slate-200 border-2 bg-white place-content-center py-12">
-            <CardItem title="Total Sales" figure="£538.79" />
-            <CardItem title="Total Orders" figure="158" />
-            <CardItem title="Products" figure="26" />
-            <CardItem title="Categories" figure="10" />
+        <div className="grid gap-8 rounded-xl border-slate-200 border-2 bg-white place-items-center py-6">
 
+            <h1 className="font-bold text-2xl">Upcoming Orders</h1>
+            
+            <div className="grid gap-4">
+                <CardItem 
+                    deliveryDate="31st October 2024" 
+                    deliveryOption="Delivery" 
+                    address="123 Fake Street, London, E1 4LJ"
+                    invoice={85} 
+                />
+                <CardItem 
+                    deliveryDate="31st October 2024" 
+                    deliveryOption="Delivery" 
+                    address="123 Fake Street, London, E1 4LJ"
+                    invoice={85} 
+                />
+                <CardItem 
+                    deliveryDate="31st October 2024" 
+                    deliveryOption="Delivery" 
+                    address="123 Fake Street, London, E1 4LJ"
+                    invoice={85} 
+                />
+                <CardItem 
+                    deliveryDate="31st October 2024" 
+                    deliveryOption="Delivery" 
+                    address="123 Fake Street, London, E1 4LJ"
+                    invoice={85} 
+                />
+                <CardItem 
+                    deliveryDate="31st October 2024" 
+                    deliveryOption="Delivery" 
+                    address="123 Fake Street, London, E1 4LJ"
+                    invoice={85} 
+                />
+            </div>
+            
         </div>
     )
 }
