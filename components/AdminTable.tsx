@@ -15,7 +15,7 @@ interface TableRowProps {
 
 const TableRow: React.FC<TableRowProps> = ({ orderRef, deliveryOption, deliveryDate, status, invoice }) => {
     return (
-        <tr className='hover:bg-slate-100/65 text-gray-700 hover:cursor-pointer'>
+        <tr className='hover:bg-slate-50 text-gray-700 hover:cursor-pointer'>
             <td className="whitespace-nowrap px-4 py-2">{orderRef}</td>
             <td className="whitespace-nowrap px-4 py-2">{deliveryOption}</td>
             <td className="whitespace-nowrap px-4 py-2">{deliveryDate}</td>
@@ -32,7 +32,7 @@ const AdminTable = () => {
 
             <h1 className="font-bold text-2xl">Current Orders</h1>
 
-            <div className="overflow-x-auto rounded-xl border-slate-200 border-2">
+            <div className="overflow-x-auto rounded-md border-slate-200 border-2">
                 <table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
                     <thead className="font-bold text-gray-900">
                         <tr>

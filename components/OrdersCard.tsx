@@ -14,13 +14,13 @@ interface CardItemProps {
 }
 const CardItem: React.FC<CardItemProps> = ({ orderRef ,orderItems, customerName ,deliveryOption,deliveryDate, address, invoice }) => {
     return (
-        <div className="bg-white border-2 border-slate-300 rounded-xl p-4 shadow-sm hover:cursor-pointer hover:bg-slate-100/65">
-            <p className="text-sm font-semibold">{ deliveryDate }</p>
-            <p className="text-sm text-slate-500">{ orderRef }</p>
-            <p className="text-sm text-slate-500">{ customerName }</p>
-            <p className="text-sm text-slate-500">{ address }</p>
-            <p className="text-sm text-slate-500">{ deliveryOption } of { orderItems } item{orderItems !== 1 ? 's' : ''}</p>           
-            <p className="text-sm text-slate-500">£{ invoice }</p>            
+        <div className="bg-white hover:bg-slate-50 border-2 border-slate-300 hover:border-slate-400/50 rounded-xl p-4 shadow-sm hover:cursor-pointer   text-sm text-slate-500 hover:text-slate-700">
+            <p className="font-semibold">{ deliveryDate }</p>
+            <p>{ orderRef }</p>
+            <p>{ customerName }</p>
+            <p>{ address }</p>
+            <p>{ deliveryOption } of { orderItems } item{orderItems !== 1 ? 's' : ''}</p>           
+            <p>£{ invoice }</p>            
         </div>
     )
 }
