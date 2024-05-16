@@ -12,15 +12,23 @@ interface CardItemProps {
     address?: string; // address to drop off order
     invoice: number;
 }
-const CardItem: React.FC<CardItemProps> = ({ orderRef ,orderItems, customerName ,deliveryOption,deliveryDate, address, invoice }) => {
+const CardItem: React.FC<CardItemProps> = ({ orderRef, orderItems, customerName, deliveryOption, deliveryDate, address, invoice }) => {
     return (
-        <div className="bg-white hover:bg-slate-50 border-2 border-slate-300 hover:border-slate-400/50 rounded-xl p-4 shadow-sm hover:cursor-pointer   text-sm text-slate-500 hover:text-slate-700">
-            <p className="font-semibold">{ deliveryDate }</p>
-            <p>{ orderRef }</p>
-            <p>{ customerName }</p>
-            <p>{ address }</p>
-            <p>{ deliveryOption } of { orderItems } item{orderItems !== 1 ? 's' : ''}</p>           
-            <p>£{ invoice }</p>            
+        <div className="grid gap-1 bg-white hover:bg-slate-50 p-4 shadow-sm hover:cursor-pointer text-sm text-slate-500 hover:text-slate-700">
+            <div className="flex justify-between">
+                <p className="font-semibold">{ deliveryDate }</p>
+                <p>{ orderRef }</p>
+            </div>
+
+            <div>
+                <p>{ customerName }</p>
+                <p>{ address }</p>
+            </div>
+
+            <div className="flex justify-between">
+                <p>{ deliveryOption } of { orderItems } item{orderItems !== 1 ? 's' : ''}</p>           
+                <p>£{ invoice }</p>      
+            </div> 
         </div>
     )
 }
@@ -31,7 +39,7 @@ const OrdersCard = () => {
 
             <h1 className="font-bold text-2xl">Pending Orders</h1>
             
-            <div className="grid gap-4">
+            <div className="grid divide-y-2 divide-gray-200 border-slate-200 border-2 rounded-sm">
                 <CardItem
                     orderRef="#C21S54"
                     orderItems={1}

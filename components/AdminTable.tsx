@@ -30,9 +30,9 @@ const AdminTable = () => {
         
         <div className="grid gap-4">
 
-            <h1 className="font-bold text-2xl">Current Orders</h1>
+            <h1 className="font-bold text-2xl">Completed Orders</h1>
 
-            <div className="overflow-x-auto rounded-md border-slate-200 border-2">
+            <div className="overflow-x-auto rounded-sm border-slate-200 border-2">
                 <table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
                     <thead className="font-bold text-gray-900">
                         <tr>
