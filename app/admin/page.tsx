@@ -16,12 +16,12 @@ const Admin = () => {
                     
                     <StatsSection />
 
-                    <div className="grid grid-cols-12 gap-4">
-                        <div className="col-span-9">
+                    <div className="flex flex-col lg:flex-row gap-4">
+                        <div className="flex-1">
                             <AdminTable/>
                         </div>
 
-                        <div className="col-span-3">
+                        <div className="w-full lg:w-1/3">
                             <OrdersCard />
                         </div>                                             
                     </div>
