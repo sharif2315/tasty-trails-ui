@@ -8,9 +8,9 @@ interface StatCardProps {
 }
 const StatCard: React.FC<StatCardProps> = ({ name, value }) => {
   return (
-    <div className="flex flex-col justify-center gap-2 bg-white border-gray-200 border-2 shadow-sm rounded-xl py-6 px-4">
-      <h1 className="text-5xl font-bold">{value}</h1>
-      <p className="text-xl font-semibold text-slate-600">{name}</p>
+    <div className="flex flex-col justify-center items-center gap-2 bg-white border-gray-200 border-2 shadow-sm rounded-xl py-6 px-4">
+      <h1 className="text-5xl md:text-4xl font-bold">{value}</h1>
+      <p className="text-xl md: md:text-lg font-semibold text-slate-600">{name}</p>
     </div>
   );
 };
