@@ -1,6 +1,5 @@
 import { IconType } from "react-icons";
 import { FaTags, FaBell } from "react-icons/fa";
-import { FaInbox } from "react-icons/fa";
 import { IoCalendarNumber, IoHome } from "react-icons/io5";
 import { MdAccountCircle } from "react-icons/md";
 import { AiOutlineBarChart, AiOutlineLogout, AiOutlineSetting } from "react-icons/ai";
@@ -63,10 +62,9 @@ const Sidebar = () => {
                     {/* Nav links */}
                     <div className="px-3 pt-2 grid place-content-center">
                         <ul className="space-y-1 grid gap-1">
-                            <NavLink name="Dashboard" icon={IoHome}  />
-                            <NavLink name="Products" icon={FaBoxArchive}  />
-                            <NavLink name="Categories" icon={FaTags}  />
-                            <NavLink name="Orders" icon={FaInbox}  />
+                            <NavLink name="Home" icon={IoHome}  />
+                            <NavLink name="Orders" icon={FaBoxArchive}  />
+                            <NavLink name="Products" icon={FaTags}  />
                             <NavLink name="Calendar" icon={IoCalendarNumber}  />
                             <NavLink name="Notifications" icon={FaBell}  />
                             <NavLink name="Analytics" icon={AiOutlineBarChart}  />
