@@ -12,7 +12,7 @@ const StatCard: React.FC<StatCardProps> = ({ name, value }) => {
       <p className="text-xl md: md:text-lg font-semibold text-slate-600">{name}</p>
       <h1 className="text-4xl md:text-5xl font-bold">{value}</h1>
       <p className="text-xs">
-        <span className="bg-lime-100 text-lime-700 px-2 py-1 rounded-lg shadow-sm">+4.5%</span> since last week
+        <span className="bg-lime-100 text-lime-700 px-2 py-1 rounded-lg shadow-sm mr-0.5">+4.5%</span> from last week
       </p>
     </div>
   );
