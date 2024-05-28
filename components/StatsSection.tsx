@@ -20,7 +20,7 @@ const StatCard: React.FC<StatCardProps> = ({ name, value }) => {
 
 const StatsSection = () => {
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 my-8">
+    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 my-8">
       <StatCard name="Total Revenue" value="£120" />
       <StatCard name="Average Order" value="£25" />
       <StatCard name="Total Orders" value="63" />
