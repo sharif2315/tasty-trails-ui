@@ -8,20 +8,23 @@ interface StatCardProps {
 }
 const StatCard: React.FC<StatCardProps> = ({ name, value }) => {
   return (
-    <div className="flex flex-col justify-center items-center gap-2 bg-white border-gray-200 border-2 shadow-sm rounded-xl py-6 px-4">
-      <h1 className="text-5xl md:text-4xl font-bold">{value}</h1>
+    <div className="flex flex-col justify-center items-center gap-3 bg-white border-gray-200 border-2 shadow-sm rounded-xl py-6 px-4 text-center">
       <p className="text-xl md: md:text-lg font-semibold text-slate-600">{name}</p>
+      <h1 className="text-4xl md:text-5xl font-bold">{value}</h1>
+      <p className="text-xs">
+        <span className="bg-lime-100 text-lime-700 px-2 py-1 rounded-lg shadow-sm">+4.5%</span> since last week
+      </p>
     </div>
   );
 };
 
 const StatsSection = () => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8">
-      <StatCard name="Sales" value="£120" />
-      <StatCard name="Orders" value="25" />
-      <StatCard name="Products" value="63" />
-      <StatCard name="Categories" value="12" />
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 my-8">
+      <StatCard name="Total Revenue" value="£120" />
+      <StatCard name="Average Order" value="£25" />
+      <StatCard name="Total Orders" value="63" />
+      <StatCard name="Total Sales" value="12" />
     </div>
   );
 };
