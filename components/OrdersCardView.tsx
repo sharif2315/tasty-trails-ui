@@ -16,7 +16,7 @@ export interface OrderProps {
 }
 const CardItem: React.FC<OrderProps> = ({ orderRef, orderItems, customerName, deliveryOption, deliveryDate, address, invoice }) => {
     return (
-        <div className="grid gap-1 bg-white hover:bg-slate-50 p-4 shadow-sm hover:cursor-pointer text-sm text-slate-500 hover:text-slate-700">
+        <div className="grid gap-2 bg-white hover:bg-slate-50 p-4 shadow-sm hover:cursor-pointer text-sm text-gray-700">
             <div className="flex justify-between">
                 <p className="font-semibold">{ deliveryDate }</p>
                 <p>{ orderRef }</p>

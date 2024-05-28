@@ -11,7 +11,7 @@ const ordersdf = [
         customerName: 'Adam Smith',
         orderRef: '#A23DY2',
         orderItems: 20,
-        deliveryDate: '2024-04-21',
+        deliveryDate: '21/04/2024',
         deliveryOption: 'Delivery',
         status: 'Processing',
         address: '123 Fake Street, London, E1 4LJ',
@@ -19,7 +19,6 @@ const ordersdf = [
     },
 ]
 export const ordersData = Array.from({ length: 10 }, () => ordersdf).flat();
-
 
 const OrdersSection = () => {
     return (
