@@ -18,10 +18,10 @@ const ordersdf = [
         invoice: 65
     },
 ]
+export const ordersData = Array.from({ length: 10 }, () => ordersdf).flat();
+
 
 const OrdersSection = () => {
-    const ordersData = Array.from({ length: 10 }, () => ordersdf).flat();
-
     return (
 
         <div className="grid gap-4">

@@ -1,4 +1,5 @@
 import React from "react";
+import { ordersData } from "./OrdersSection";
 
 // TODO: Card for Top 5 Selling Products
 // fields: imgUrl, name, quantitySold, totalSales
@@ -41,56 +42,21 @@ const OrdersCardView = () => {
             {/* <h1 className="font-bold text-2xl">Notifications</h1> */}
             
             <div className="grid divide-y-2 divide-gray-200 border-slate-200 border-2 rounded-sm">
-                <CardItem
-                    orderRef="#C21S54"
-                    orderItems={1}
-                    customerName="Timothy Mclean"
-                    deliveryDate="31st October 2024" 
-                    deliveryOption="Delivery" 
-                    address="123 Fake Street, London, E1 4LJ"
-                    invoice={85}
-                    status="Completed"
-                />
-                <CardItem
-                    orderRef="#C21S54"
-                    orderItems={12}
-                    customerName="James Dean"
-                    deliveryDate="31st October 2024" 
-                    deliveryOption="Pickup" 
-                    address="123 Fake Street, London, E1 4LJ"
-                    invoice={85} 
-                    status="Processing"
-                />
-                <CardItem
-                    orderRef="#C21S54"
-                    orderItems={34}
-                    customerName="Stacy Connor"
-                    deliveryDate="31st October 2024" 
-                    deliveryOption="Delivery" 
-                    address="123 Fake Street, London, E1 4LJ"
-                    invoice={85} 
-                    status="Completed"
-                />
-                <CardItem
-                    orderRef="#C21S54"
-                    orderItems={25}
-                    customerName="Jean Brandy"
-                    deliveryDate="31st October 2024" 
-                    deliveryOption="Pickup" 
-                    address="123 Fake Street, London, E1 4LJ"
-                    invoice={85} 
-                    status="Processing"
-                />
-                <CardItem 
-                    orderRef="#C21S54"
-                    orderItems={19}
-                    customerName="Beth Jetts"
-                    deliveryDate="31st October 2024" 
-                    deliveryOption="Delivery" 
-                    address="123 Fake Street, London, E1 4LJ"
-                    invoice={85} 
-                    status="Completed"
-                />
+                {
+                    ordersData.map((order, index) => (
+                        <CardItem
+                            key={index}
+                            orderRef={order.orderRef}
+                            orderItems={order.orderItems}
+                            customerName={order.customerName}
+                            deliveryDate={order.deliveryDate}
+                            deliveryOption={order.deliveryOption}
+                            address={order.address}
+                            invoice={order.invoice}
+                            status={order.status}
+                        />
+                    ))
+                }
             </div>
             
         </div>

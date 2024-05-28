@@ -1,5 +1,6 @@
 import React from 'react'
 import { OrderProps } from './OrdersCardView'
+import { ordersData } from './OrdersSection'
 
 
 const TableRow: React.FC<OrderProps> = ({ orderRef, deliveryOption, deliveryDate, status, invoice }) => {
@@ -30,22 +31,18 @@ const OrdersTable = () => {
         </thead>
 
         <tbody className="divide-y divide-gray-200 text-center">
-            <TableRow orderRef='#A2SHE2' deliveryOption='Pickup' deliveryDate='13/05/2024' status='Processing' invoice={15.99} />
-            <TableRow orderRef='#A2SHE2' deliveryOption='Delivery' deliveryDate='13/05/2024' status='Processing' invoice={27.99} />
-            <TableRow orderRef='#A2SHE2' deliveryOption='Delivery' deliveryDate='13/05/2024' status='Processing' invoice={35.99} />
-            {/* <TableRow orderRef='#A2SHE2' deliveryOption='PICKUP' deliveryDate='13/05/2024' status='PROCESSING' invoice={75.99}  /> */}
-
-            {[...Array(10)].map((_, index) => (
-                <TableRow
-                    key={index}
-                    orderRef={`#A2SHE${index + 1}`}
-                    deliveryOption='Pickup'
-                    deliveryDate='13/05/2024'
-                    status='Completed'
-                    invoice={15.99}
-                />
-            ))}
-
+            {
+                ordersData.map((order, index) => (
+                    <TableRow
+                        key={index}
+                        orderRef={order.orderRef}
+                        deliveryOption={order.deliveryOption}
+                        deliveryDate={order.deliveryDate}
+                        status={order.status}
+                        invoice={order.invoice}
+                    />
+                ))
+            }
         </tbody>
     </table>
 </div>
