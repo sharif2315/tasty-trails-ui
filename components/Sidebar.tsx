@@ -62,9 +62,9 @@ const Sidebar = () => {
                     {/* Nav links */}
                     <div className="px-3 pt-2 grid place-content-center">
                         <ul className="space-y-1 grid gap-1">
-                            <NavLink name="Home" icon={IoHome}  />
-                            <NavLink name="Orders" icon={FaBoxArchive}  />
-                            <NavLink name="Products" icon={FaTags}  />
+                            <NavLink name="Home" icon={IoHome} href="/dashboard/" />
+                            <NavLink name="Orders" icon={FaBoxArchive} href="/dashboard/orders"  />
+                            <NavLink name="Products" icon={FaTags} href="/dashboard/products" />
                             <NavLink name="Calendar" icon={IoCalendarNumber}  />
                             <NavLink name="Notifications" icon={FaBell}  />
                             <NavLink name="Analytics" icon={AiOutlineBarChart}  />
