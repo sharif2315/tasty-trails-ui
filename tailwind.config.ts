@@ -8,6 +8,11 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    extend: {
+      screens: {
+        'xs': '480px'
+      }
+    }
     // extend: {
     //   backgroundImage: {
     //     "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
