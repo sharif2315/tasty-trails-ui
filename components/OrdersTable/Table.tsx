@@ -1,6 +1,6 @@
 import React from 'react'
-import { OrderProps } from './OrdersCardView'
-import { ordersData } from './OrdersSection'
+import { OrderProps } from './CardList'
+import { ordersData } from './Section'
 
 
 const TableRow: React.FC<OrderProps> = ({ orderRef, deliveryOption, deliveryDate, status, invoice }) => {
@@ -15,7 +15,7 @@ const TableRow: React.FC<OrderProps> = ({ orderRef, deliveryOption, deliveryDate
     )
 }
 
-const OrdersTable = () => {
+const Table = () => {
   return (
     <div className="overflow-x-auto rounded-sm border-slate-200 border-2">
     <table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
@@ -49,4 +49,4 @@ const OrdersTable = () => {
   )
 }
 
-export default OrdersTable
+export default Table

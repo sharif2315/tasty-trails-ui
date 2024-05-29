@@ -1,5 +1,5 @@
 import React from "react";
-import { ordersData } from "./OrdersSection";
+import { ordersData } from "./Section";
 
 // TODO: Card for Top 5 Selling Products
 // fields: imgUrl, name, quantitySold, totalSales
@@ -35,7 +35,7 @@ const CardItem: React.FC<OrderProps> = ({ orderRef, orderItems, customerName, de
     )
 }
 
-const OrdersCardView = () => {
+const CardList = () => {
     return (
         <div className="grid gap-4">
 
@@ -63,4 +63,4 @@ const OrdersCardView = () => {
     )
 }
 
-export default OrdersCardView
+export default CardList

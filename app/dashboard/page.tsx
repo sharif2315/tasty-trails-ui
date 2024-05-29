@@ -1,5 +1,5 @@
 // import Sidebar from "@/components/Sidebar"
-import OrdersSection from "@/components/OrdersSection"
+import OrdersSection from "@/components/OrdersTable/Section"
 // import Navbar from "@/components/Navbar"
 import StatsSection from "@/components/StatsSection"
 

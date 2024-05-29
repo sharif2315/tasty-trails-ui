@@ -1,6 +1,7 @@
 import React from 'react'
-import OrdersCardView from './OrdersCardView';
-import OrdersTable from './OrdersTable';
+import CardList from './CardList';
+import Table from './Table';
+import TableView from './TableView';
 
 // Recent Orders
 // name, category, price
@@ -20,24 +21,14 @@ const ordersdf = [
 ]
 export const ordersData = Array.from({ length: 10 }, () => ordersdf).flat();
 
-const OrdersSection = () => {
+const Section = () => {
     return (
 
         <div className="grid gap-4">
-
             <h1 className="font-bold text-2xl">Recent Orders</h1>
-
-            <div className='hidden md:block'>
-                <OrdersTable />
-            </div>
-
-            <div className="md:hidden">
-                <OrdersCardView />
-            </div>
-
-
+            <TableView/>
         </div>
     )
 }
 
-export default OrdersSection
+export default Section
