@@ -5,15 +5,15 @@ import React from 'react';
 
 
 interface SlideOverProps {
-    open: boolean;
-    setOpen: (open: boolean) => void;
-    title: string;
-    children: React.ReactNode;
-    direction?: 'left' | 'right';
+  open: boolean;
+  setOpen: (open: boolean) => void;
+  title: string;
+  children: React.ReactNode;
+  direction?: 'left' | 'right';
 }
 
 const SlideOver: React.FC<SlideOverProps> = ({ open, setOpen, direction, title, children }) => {
-    const isLeft = direction === 'left';
+  const isLeft = direction === 'left';
 
   return (
     <Transition show={open}>
@@ -31,9 +31,9 @@ const SlideOver: React.FC<SlideOverProps> = ({ open, setOpen, direction, title, 
 
         <div className="fixed inset-0 overflow-hidden">
           <div className="absolute inset-0 overflow-hidden">
-            <div 
-                // className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10"
-                className={`pointer-events-none fixed inset-y-0 ${isLeft ? 'left-0' : 'right-0'} flex max-w-full ${isLeft ? 'pr-10' : 'pl-10'}`}
+            <div
+              // className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10"
+              className={`pointer-events-none fixed inset-y-0 ${isLeft ? 'left-0' : 'right-0'} flex max-w-full ${isLeft ? 'pr-10' : 'pl-10'}`}
             >
               <TransitionChild
                 enter="transform transition ease-in-out duration-500 sm:duration-700"
@@ -54,9 +54,9 @@ const SlideOver: React.FC<SlideOverProps> = ({ open, setOpen, direction, title, 
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                   >
-                    <div 
-                        // className="absolute left-0 top-0 -ml-8 flex pr-2 pt-4 sm:-ml-10 sm:pr-4"
-                        className={`absolute ${isLeft ? 'right-0 -mr-8' : 'left-0 -ml-8'} flex ${isLeft ? 'pl-2' : 'pr-2'} pt-4 sm:${isLeft ? '-mr-10' : '-ml-10'} sm:${isLeft ? 'pl-4' : 'pr-4'}`}
+                    <div
+                      // className="absolute left-0 top-0 -ml-8 flex pr-2 pt-4 sm:-ml-10 sm:pr-4"
+                      className={`absolute ${isLeft ? 'right-0 -mr-8' : 'left-0 -ml-8'} flex ${isLeft ? 'pl-2' : 'pr-2'} pt-4 sm:${isLeft ? '-mr-10' : '-ml-10'} sm:${isLeft ? 'pl-4' : 'pr-4'}`}
                     >
                       <button
                         type="button"
@@ -73,9 +73,9 @@ const SlideOver: React.FC<SlideOverProps> = ({ open, setOpen, direction, title, 
                     <div className="px-4 sm:px-6">
                       <DialogTitle className="text-base font-semibold leading-6 text-gray-900">{title}</DialogTitle>
                     </div>
-                    
+
                     <div className="relative mt-6 flex-1 px-4 sm:px-6">
-                        { children }
+                      {children}
                     </div>
 
                   </div>
