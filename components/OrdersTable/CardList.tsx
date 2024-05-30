@@ -16,49 +16,43 @@ export interface OrderProps {
 }
 const CardItem: React.FC<OrderProps> = ({ orderRef, orderItems, customerName, deliveryOption, deliveryDate, address, invoice }) => {
     return (
-        <div className="grid gap-2 bg-white hover:bg-slate-50 p-4 shadow-sm hover:cursor-pointer text-sm text-gray-700">
+        <div className="card_item__base">
             <div className="flex justify-between">
-                <p className="font-semibold">{ deliveryDate }</p>
-                <p>{ orderRef }</p>
+                <p className="font-semibold">{deliveryDate}</p>
+                <p>{orderRef}</p>
             </div>
 
             <div>
-                <p>{ customerName }</p>
-                <p>{ address }</p>
+                <p>{customerName}</p>
+                <p>{address}</p>
             </div>
 
             <div className="flex justify-between">
-                <p>{ deliveryOption } of { orderItems } item{orderItems !== 1 ? 's' : ''}</p>           
-                <p>£{ invoice }</p>      
-            </div> 
+                <p>{deliveryOption} of {orderItems} item{orderItems !== 1 ? 's' : ''}</p>
+                <p>£{invoice}</p>
+            </div>
         </div>
     )
 }
 
 const CardList = () => {
     return (
-        <div className="grid gap-4">
-
-            {/* <h1 className="font-bold text-2xl">Notifications</h1> */}
-            
-            <div className="grid divide-y-2 divide-gray-200 border-slate-200 border-2 rounded-sm">
-                {
-                    ordersData.map((order, index) => (
-                        <CardItem
-                            key={index}
-                            orderRef={order.orderRef}
-                            orderItems={order.orderItems}
-                            customerName={order.customerName}
-                            deliveryDate={order.deliveryDate}
-                            deliveryOption={order.deliveryOption}
-                            address={order.address}
-                            invoice={order.invoice}
-                            status={order.status}
-                        />
-                    ))
-                }
-            </div>
-            
+        <div className="card_list__base">
+            {
+                ordersData.map((order, index) => (
+                    <CardItem
+                        key={index}
+                        orderRef={order.orderRef}
+                        orderItems={order.orderItems}
+                        customerName={order.customerName}
+                        deliveryDate={order.deliveryDate}
+                        deliveryOption={order.deliveryOption}
+                        address={order.address}
+                        invoice={order.invoice}
+                        status={order.status}
+                    />
+                ))
+            }
         </div>
     )
 }
