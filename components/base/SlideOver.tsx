@@ -1,9 +1,19 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import { Dialog, DialogPanel, DialogTitle, Transition, TransitionChild } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
+import React from 'react';
 
-export default function SlideOver() {
-  const [open, setOpen] = useState(true)
+
+interface SlideOverProps {
+    open: boolean;
+    setOpen: (open: boolean) => void;
+    title: string;
+    children: React.ReactNode;
+    direction?: 'left' | 'right';
+}
+
+const SlideOver: React.FC<SlideOverProps> = ({ open, setOpen, direction, title, children }) => {
+    const isLeft = direction === 'left';
 
   return (
     <Transition show={open}>
@@ -21,14 +31,19 @@ export default function SlideOver() {
 
         <div className="fixed inset-0 overflow-hidden">
           <div className="absolute inset-0 overflow-hidden">
-            <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+            <div 
+                // className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10"
+                className={`pointer-events-none fixed inset-y-0 ${isLeft ? 'left-0' : 'right-0'} flex max-w-full ${isLeft ? 'pr-10' : 'pl-10'}`}
+            >
               <TransitionChild
                 enter="transform transition ease-in-out duration-500 sm:duration-700"
-                enterFrom="translate-x-full"
+                // enterFrom="translate-x-full"
+                enterFrom={isLeft ? '-translate-x-full' : 'translate-x-full'}
                 enterTo="translate-x-0"
                 leave="transform transition ease-in-out duration-500 sm:duration-700"
                 leaveFrom="translate-x-0"
-                leaveTo="translate-x-full"
+                // leaveTo="translate-x-full"
+                leaveTo={isLeft ? '-translate-x-full' : 'translate-x-full'}
               >
                 <DialogPanel className="pointer-events-auto relative w-screen max-w-md">
                   <TransitionChild
@@ -39,7 +54,10 @@ export default function SlideOver() {
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                   >
-                    <div className="absolute left-0 top-0 -ml-8 flex pr-2 pt-4 sm:-ml-10 sm:pr-4">
+                    <div 
+                        // className="absolute left-0 top-0 -ml-8 flex pr-2 pt-4 sm:-ml-10 sm:pr-4"
+                        className={`absolute ${isLeft ? 'right-0 -mr-8' : 'left-0 -ml-8'} flex ${isLeft ? 'pl-2' : 'pr-2'} pt-4 sm:${isLeft ? '-mr-10' : '-ml-10'} sm:${isLeft ? 'pl-4' : 'pr-4'}`}
+                    >
                       <button
                         type="button"
                         className="relative rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
@@ -51,11 +69,15 @@ export default function SlideOver() {
                       </button>
                     </div>
                   </TransitionChild>
-                  <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
+                  <div className="flex h-full flex-col bg-white py-6 shadow-xl">
                     <div className="px-4 sm:px-6">
-                      <DialogTitle className="text-base font-semibold leading-6 text-gray-900">Panel title</DialogTitle>
+                      <DialogTitle className="text-base font-semibold leading-6 text-gray-900">{title}</DialogTitle>
                     </div>
-                    <div className="relative mt-6 flex-1 px-4 sm:px-6">{/* Your content */}</div>
+                    
+                    <div className="relative mt-6 flex-1 px-4 sm:px-6">
+                        { children }
+                    </div>
+
                   </div>
                 </DialogPanel>
               </TransitionChild>
@@ -66,3 +88,4 @@ export default function SlideOver() {
     </Transition>
   )
 }
+export default SlideOver
