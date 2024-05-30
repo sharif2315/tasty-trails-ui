@@ -5,48 +5,48 @@ import { ordersData } from './Section'
 
 const TableRow: React.FC<OrderProps> = ({ orderRef, deliveryOption, deliveryDate, status, invoice }) => {
     return (
-        <tr className='hover:bg-slate-50 text-gray-700 hover:cursor-pointer'>
-            <td className="whitespace-nowrap px-4 py-2">{orderRef}</td>
-            <td className="whitespace-nowrap px-4 py-2">{deliveryOption}</td>
-            <td className="whitespace-nowrap px-4 py-2">{deliveryDate}</td>
-            <td className="whitespace-nowrap px-4 py-2">£{invoice}</td>
-            <td className="whitespace-nowrap px-4 py-2">{status}</td>
+        <tr className='table__row'>
+            <td>{orderRef}</td>
+            <td>{deliveryOption}</td>
+            <td>{deliveryDate}</td>
+            <td>£{invoice}</td>
+            <td>{status}</td>
         </tr>
     )
 }
 
 const Table = () => {
-  return (
-    <div className="overflow-x-auto rounded-sm border-slate-200 border-2">
-    <table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
-        <thead className="font-bold text-gray-900">
-            <tr>
-                <th className="whitespace-nowrap px-4 py-2">Order ID</th>
-                <th className="whitespace-nowrap px-4 py-2">Delivery Option</th>
-                <th className="whitespace-nowrap px-4 py-2">Delivery Date</th>
-                <th className="whitespace-nowrap px-4 py-2">Invoice</th>
-                <th className="whitespace-nowrap px-4 py-2">Status</th>
-                {/* <th className="px-4 py-2"></th> */}
-            </tr>
-        </thead>
+    return (
+        <div className="table__outer">
+            <table className="table__base">
+                <thead className="table__head">
+                    <tr className='table__head__row'>
+                        <th>Order Ref</th>
+                        <th>Delivery Option</th>
+                        <th>Delivery Date</th>
+                        <th>Invoice</th>
+                        <th>Status</th>
+                        {/* <th className="px-4 py-2"></th> */}
+                    </tr>
+                </thead>
 
-        <tbody className="divide-y divide-gray-200 text-center">
-            {
-                ordersData.map((order, index) => (
-                    <TableRow
-                        key={index}
-                        orderRef={order.orderRef}
-                        deliveryOption={order.deliveryOption}
-                        deliveryDate={order.deliveryDate}
-                        status={order.status}
-                        invoice={order.invoice}
-                    />
-                ))
-            }
-        </tbody>
-    </table>
-</div>
-  )
+                <tbody className="tbody__base">
+                    {
+                        ordersData.map((order, index) => (
+                            <TableRow
+                                key={index}
+                                orderRef={order.orderRef}
+                                deliveryOption={order.deliveryOption}
+                                deliveryDate={order.deliveryDate}
+                                status={order.status}
+                                invoice={order.invoice}
+                            />
+                        ))
+                    }
+                </tbody>
+            </table>
+        </div>
+    )
 }
 
 export default Table

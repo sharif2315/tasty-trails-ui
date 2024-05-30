@@ -5,3 +5,33 @@
 body {
     background-color: rgb(241 245 249 / 0.65);
 }
+
+@layer components {
+    .table__outer {
+        @apply overflow-x-auto rounded-sm border-slate-200 border-2;
+    }
+
+    .table__base {
+        @apply min-w-full divide-y-2 divide-gray-200 bg-white text-sm;
+    }
+
+    .table__head {
+        @apply font-bold text-gray-900;
+    }
+
+    .table__head__row > th {
+        @apply whitespace-nowrap px-4 py-2;
+    }
+
+    .tbody__base {
+        @apply divide-y divide-gray-200 text-center;
+    }
+
+    .table__row {
+        @apply hover:bg-slate-50 text-gray-700 hover:cursor-pointer;
+    }
+
+    .table__row > td {
+        @apply whitespace-nowrap px-4 py-2;
+    }
+}
