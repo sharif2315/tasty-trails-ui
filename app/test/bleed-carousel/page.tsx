@@ -10,7 +10,10 @@ const Page = () => {
         'https://images.pexels.com/photos/18991593/pexels-photo-18991593/free-photo-of-exterior-and-patio-of-a-colorful-house-in-aswan-egypt.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       ];
   return (
+    <div className='max-w-md'>
     <FullBleedCarousel images={images} />
+
+    </div>
   )
 }
 

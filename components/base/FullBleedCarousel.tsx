@@ -21,12 +21,15 @@ const FullBleedCarousel: React.FC<CarouselProps> = ({ images }) => {
 
   return (
     <div className="relative w-full h-screen overflow-hidden flex items-center">
-      <div className="flex transition-transform duration-700" style={{ transform: `translateX(-${(currentIndex * 100) / 3}%)` }}>
+      
+      <div className="flex transition-transform duration-700" style={{ transform: `translateX(-${(currentIndex * 100) / 2}%)` }}>
+
         {images.map((image, index) => (
           <div key={index} className="w-3/5 flex-shrink-0 mx-2">
             <img src={image} alt={`Slide ${index}`} className="w-full h-full object-cover rounded-lg shadow-lg" />
           </div>
         ))}
+    
       </div>
 
       <button onClick={handlePrev} className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full focus:outline-none">
