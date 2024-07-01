@@ -25,7 +25,7 @@ const NavItem: React.FC<NavItemProps> = ({ name, href='#' }) => {
 
 const Navbar = () => {
     return (
-        <div className="sticky flex gap-4 py-2 justify-between items-center">
+        <div className="sticky flex gap-4 py-2 px-8 justify-between items-center bg-white border-b">
 
             <div className="text-xl">Hello, Sharif</div>
 
@@ -38,7 +38,7 @@ const Navbar = () => {
                         <span className="sr-only">Open user menu</span>
                         <MdAccountCircle 
                             className="bg-white text-gray-500 rounded-full" 
-                            size={40} 
+                            size={35} 
                         />                        
                     </MenuButton>
                 </div>
